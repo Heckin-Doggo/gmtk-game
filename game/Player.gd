@@ -1,18 +1,30 @@
-extends KinematicBody2D
+extends RigidBody2D
 
-var ACCELERATION = 700
-var FRICTION = 1500
-var MOVE_SPEED = 200
-var input_vector = Vector2.ZERO
+var Web = preload("res://scenes/Webshot.tscn")
+
 var velocity = Vector2.ZERO
+#the directions of the strings
+var webhooks = []
 
 func _physics_process(delta):
-	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-	input_vector = input_vector.normalized()
+	#loops over each webhook
+	for webhook in webhooks:
+		#Gets the end of the strings position and the vector to that position
+		var hook_point = webhook.points[1]
+		var pull = hook_point - position
+		#adds that vector to the velocity
+		velocity = velocity + pull
 	
-	if input_vector != Vector2.ZERO:
-		velocity = velocity.move_toward(input_vector * MOVE_SPEED, ACCELERATION * delta)
-	else:
-		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
-	
-	move_and_slide(velocity)
+	set_linear_velocity(velocity)
+
+#Adds a line2d webhook and adds it to the array of current webhooks
+func shoot_web(hook_position):
+	var new_webhook = Web.instance()
+	new_webhook.points[1] = hook_position
+	add_child(new_webhook)
+	webhooks.append(new_webhook)
+
+func _unhandled_input(event):
+	if event is InputEventMouseButton:
+		if event.button_index == BUTTON_LEFT:
+			shoot_web(event.position)
