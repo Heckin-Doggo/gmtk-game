@@ -17,6 +17,7 @@ func _physics_process(delta):
 		#adds that vector to the velocity
 		velocity = velocity + pull * 3
 	
+	print(velocity)
 	set_applied_force(velocity)
 
 #Adds a line2d webhook and adds it to the array of current webhooks
@@ -47,4 +48,4 @@ func _unhandled_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT:
 			if event.pressed:  # make sure its actually pressed. prevent double click
-				shoot_web(event.position)
+				shoot_web(get_global_mouse_position())
