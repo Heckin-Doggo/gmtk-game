@@ -33,6 +33,13 @@ func shoot_web(hook_position):
 func delete_hook(index):
 	var dead_hook = webhooks[index]
 	webhooks.remove(index)
+	
+	var hook_index = 0
+	for hook in webhooks:
+		if hook_index >= index:
+			hook.set_index(hook_index)
+		hook_index += 1
+	
 	dead_hook.queue_free()
 
 func _unhandled_input(event):
