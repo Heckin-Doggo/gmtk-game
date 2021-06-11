@@ -22,9 +22,18 @@ func _physics_process(delta):
 #Adds a line2d webhook and adds it to the array of current webhooks
 func shoot_web(hook_position):
 	var new_webhook = Web.instance()
+	
+	new_webhook.set_index(webhooks.size())
 	new_webhook.points[1] = hook_position
+	new_webhook.set_click_position()
+	
 	get_parent().add_child(new_webhook)
 	webhooks.append(new_webhook)
+
+func delete_hook(index):
+	var dead_hook = webhooks[index]
+	webhooks.remove(index)
+	dead_hook.queue_free()
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton:
