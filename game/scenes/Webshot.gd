@@ -3,6 +3,9 @@ extends Line2D
 var selectable = false
 var index
 
+func _ready():
+	visible = true
+
 func set_click_position():
 	$Area2D/CollisionShape2D.position = points[1]
 

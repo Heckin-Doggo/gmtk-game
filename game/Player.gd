@@ -24,6 +24,7 @@ func shoot_web(hook_position):
 	var new_webhook = Web.instance()
 	
 	new_webhook.set_index(webhooks.size())
+	new_webhook.points[0] = position
 	new_webhook.points[1] = hook_position
 	new_webhook.set_click_position()
 	
