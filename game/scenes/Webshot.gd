@@ -20,6 +20,10 @@ func _on_Area2D_mouse_exited():
 	default_color = Color(1, 1, 1, 1)
 	selectable = false
 
+func update_position(new_position):
+	points[0] = new_position
+	set_click_position()
+
 func _unhandled_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_RIGHT and selectable:
