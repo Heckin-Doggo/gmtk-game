@@ -15,7 +15,7 @@ func _physics_process(delta):
 		var hook_point = webhook.points[1]
 		var pull = hook_point - position
 		#adds that vector to the velocity
-		velocity = velocity + pull * DAMP
+		velocity = velocity + pull * 3
 	
 	set_applied_force(velocity)
 
