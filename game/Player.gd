@@ -4,6 +4,8 @@ var Web = preload("res://scenes/Webshot.tscn")
 #the directions of the strings
 var webhooks = []
 
+export var DAMP = 0.9
+
 func _physics_process(delta):
 	var velocity = Vector2.ZERO
 	#loops over each webhook
@@ -13,7 +15,7 @@ func _physics_process(delta):
 		var hook_point = webhook.points[1]
 		var pull = hook_point - position
 		#adds that vector to the velocity
-		velocity = velocity + pull
+		velocity = velocity + pull * DAMP
 	
 	set_applied_force(velocity)
 
