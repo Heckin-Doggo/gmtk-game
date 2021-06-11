@@ -1,4 +1,5 @@
 extends RigidBody2D
+class_name Player
 
 var Web = preload("res://scenes/Webshot.tscn")
 #the directions of the strings
