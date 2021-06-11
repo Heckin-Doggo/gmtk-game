@@ -46,4 +46,5 @@ func delete_hook(index):
 func _unhandled_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT:
-			shoot_web(event.position)
+			if event.pressed:
+				shoot_web(event.position)
