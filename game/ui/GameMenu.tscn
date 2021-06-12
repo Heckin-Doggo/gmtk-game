@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://ui/DialogBox.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/fonts/dpcomic.ttf" type="DynamicFontData" id=2]
 
-[node name="Control" type="Control"]
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[node name="GameMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -10,6 +14,43 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ReferenceRect" type="ReferenceRect" parent="."]
+visible = false
+margin_right = 640.0
+margin_bottom = 360.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
 [node name="NinePatchRect" parent="." instance=ExtResource( 1 )]
-margin_right = 192.0
-margin_bottom = 112.0
+margin_right = 148.0
+margin_bottom = 216.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_top = 16.0
+margin_right = 148.0
+margin_bottom = 216.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 148.0
+margin_bottom = 16.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0.823529, 0.596078, 1 )
+text = "Menu"
+align = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+margin_top = 20.0
+margin_right = 148.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 0, 16 )
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer"]
+margin_top = 40.0
+margin_right = 148.0
+margin_bottom = 40.0
