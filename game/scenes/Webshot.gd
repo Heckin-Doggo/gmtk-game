@@ -29,8 +29,3 @@ func _on_Area2D_mouse_exited():
 func update_position(new_position):
 	points[0] = new_position
 	set_click_position()
-
-#func _unhandled_input(event):
-#	if event is InputEventMouseButton:
-#		if event.button_index == BUTTON_RIGHT and selectable:
-#			get_parent().delete_hook(index)
