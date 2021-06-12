@@ -43,3 +43,6 @@ func delete_hook(index):
 func add_hook(new_webhook):
 	new_webhook.set_index(webhooks.size())
 	webhooks.append(new_webhook)
+
+func die():
+	print("you died!")
