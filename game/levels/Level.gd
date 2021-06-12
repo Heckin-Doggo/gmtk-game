@@ -1,9 +1,14 @@
 extends Node2D
 class_name Level
 
+# preloaded
 var Web = preload("res://scenes/Webshot.tscn")
 onready var player = get_node("Player")
 
+# global win sound
+onready var WinSound = get_node("/root/WinSound")
+
+# script variables
 var flies = 0
 var webbed_flies = 0
 
@@ -16,6 +21,7 @@ func add_web_flies():
 
 func test_win():
 	if flies == webbed_flies:
+		WinSound.play()
 		print("you win!")
 
 func create_webhook(hooked_object):

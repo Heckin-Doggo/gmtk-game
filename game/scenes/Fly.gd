@@ -101,3 +101,4 @@ func trap(web_pos):
 	get_parent().add_web_flies()
 	original_pos = web_pos
 	bounds = 3
+	$Nung.play()
