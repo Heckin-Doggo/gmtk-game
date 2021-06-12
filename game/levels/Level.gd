@@ -1,4 +1,5 @@
 extends Node2D
+class_name Level
 
 var Web = preload("res://scenes/Webshot.tscn")
 onready var player = get_node("Player")
