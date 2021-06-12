@@ -21,6 +21,7 @@ func _ready():
 	connect("mouse_entered", self, "_on_mouse_entered")
 	connect("mouse_exited", self, "_on_mouse_exited")
 	connect("input_event",  self, "_on_fly_input_event")
+	add_to_group("flies")
 	set_bounce(0.2)
 	get_parent().add_flies()
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://ui/MenuItemFont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://assets/sprites/LevelButton.png" type="Texture" id=2]
@@ -8,10 +8,13 @@
 [ext_resource path="res://ui/MenuTitleFont.tres" type="DynamicFont" id=6]
 [ext_resource path="res://assets/sprites/Button.png" type="Texture" id=7]
 [ext_resource path="res://assets/sprites/LevelButtonPressed.png" type="Texture" id=8]
+[ext_resource path="res://ui/LevelSelect.gd" type="Script" id=9]
+[ext_resource path="res://assets/sprites/ButtonPressed.png" type="Texture" id=10]
 
 [node name="LevelSelect" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 9 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
@@ -26,8 +29,10 @@ __meta__ = {
 }
 
 [node name="NinePatchRect" parent="." instance=ExtResource( 5 )]
-margin_right = 420.0
-margin_bottom = 236.0
+margin_left = 110.0
+margin_top = 62.0
+margin_right = 530.0
+margin_bottom = 298.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
 margin_top = 16.0
@@ -183,6 +188,7 @@ margin_left = 316.0
 margin_right = 406.0
 margin_bottom = 32.0
 texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/ReturnButtonContainer/ReturnButton"]
 anchor_right = 1.0
