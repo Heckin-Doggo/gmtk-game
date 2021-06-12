@@ -16,7 +16,10 @@ func _physics_process(delta):
 		#adds that vector to the velocity
 		velocity = velocity + pull * 3
 	
-	var damp = get_linear_velocity() * -0.9
+	#applies dampening if there are hooks
+	var damp = Vector2.ZERO
+	if webhooks:
+		damp = get_linear_velocity() * -0.9
 	
 	set_applied_force((velocity + damp) * 2)
 
@@ -24,18 +27,22 @@ func _physics_process(delta):
 func shoot_web(hook_position):
 	var new_webhook = Web.instance()
 	
+	#set webhooks stuff
 	new_webhook.set_index(webhooks.size())
 	new_webhook.points[0] = position
 	new_webhook.points[1] = hook_position
 	new_webhook.set_click_position()
 	
+	#adds the new webhook to world and the array
 	get_parent().add_child(new_webhook)
 	webhooks.append(new_webhook)
 
 func delete_hook(index):
+	#removes the webhook from the array
 	var dead_hook = webhooks[index]
 	webhooks.remove(index)
 	
+	#updates array index for the rest of the hooks
 	var hook_index = 0
 	for hook in webhooks:
 		if hook_index >= index:
