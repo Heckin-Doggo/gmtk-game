@@ -22,6 +22,7 @@ func _ready():
 	connect("mouse_exited", self, "_on_mouse_exited")
 	connect("input_event",  self, "_on_fly_input_event")
 	set_bounce(0.2)
+	get_parent().add_flies()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -95,6 +96,7 @@ func _on_fly_input_event(viewport, event, shape_idx):
 func trap():
 	$AnimatedSprite.animation = "trapped"
 	trapped = true
+	get_parent().add_web_flies()
 
 func untrap():
 	$AnimatedSprite.animation = "default"

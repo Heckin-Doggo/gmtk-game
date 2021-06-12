@@ -4,6 +4,20 @@ class_name Level
 var Web = preload("res://scenes/Webshot.tscn")
 onready var player = get_node("Player")
 
+var flies = 0
+var webbed_flies = 0
+
+func add_flies():
+	flies += 1
+	
+func add_web_flies():
+	webbed_flies += 1
+	test_win()
+
+func test_win():
+	if flies == webbed_flies:
+		print("you win!")
+
 func create_webhook(hooked_object):
 	var new_webhook = Web.instance()
 	#set webhooks stuff
@@ -19,3 +33,5 @@ func create_webhook(hooked_object):
 
 func delete_hook(index):
 	player.delete_hook(index)
+
+
