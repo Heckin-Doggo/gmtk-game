@@ -10,6 +10,7 @@ func _ready():
 		var x = str(i)
 		get_node("NinePatchRect/VBoxContainer/LevelButtons/Level"+x).connect("pressed", self, "select_"+x)
 	$NinePatchRect/VBoxContainer/TutorialButton.connect("pressed", self, "select_tutorial")
+	$NinePatchRect/VBoxContainer/ReturnButtonContainer/ReturnButton.connect("pressed", self, "go_back")
 
 # level selects
 func select_1():
@@ -29,3 +30,6 @@ func select_5():
 
 func select_tutorial():
 	get_tree().change_scene("res://levels/Tutorial.tscn")
+	
+func go_back():
+	queue_free()
