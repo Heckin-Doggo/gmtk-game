@@ -5,6 +5,8 @@ var Web = preload("res://scenes/Webshot.tscn")
 #the directions of the strings
 var webhooks = []
 
+var is_dead = false
+
 #sounds
 onready var soundRetract = get_node("Retract")
 onready var soundShoot = get_node("Shoot")
@@ -62,4 +64,9 @@ func add_hook(new_webhook):
 
 func die():
 	soundArgh.play()
+	is_dead = true
+	var hook_array = webhooks
+	webhooks = []
+	for hook in hook_array:
+		hook.queue_free()
 	print("you died!")
