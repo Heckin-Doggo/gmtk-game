@@ -471,7 +471,6 @@ script = ExtResource( 4 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 296, 176 )
 z_index = 2
-mode = 2
 can_sleep = false
 
 [node name="Fly" parent="." instance=ExtResource( 3 )]

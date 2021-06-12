@@ -32,12 +32,11 @@ func _on_mouse_exited():
 
 func _on_Peg_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT and not connected_hook:
-		if $AnimatedSprite.animation == "off":  # TODO: Why the hell are we relying on animation state?
-			$AnimatedSprite.animation = "on"
-			cursor_enabled = false
-			$Cursor.visible = false
-			emit_signal("peg_clicked", Vector2(position.x, position.y))
-			get_parent().create_webhook(self)
+		$AnimatedSprite.animation = "on"
+		cursor_enabled = false
+		$Cursor.visible = false
+		emit_signal("peg_clicked", Vector2(position.x, position.y))
+		get_parent().create_webhook(self)
 	elif event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT and connected_hook:
 		get_parent().delete_hook(connected_hook.get_index())
 		connected_hook = null
