@@ -39,6 +39,11 @@ func _physics_process(delta):
 	if connected_hook:
 		connected_hook.points[1] = position
 	
+	if Input.get_action_strength("ui_accept") > 0 and connected_hook:
+		get_parent().delete_hook(connected_hook.get_index())
+		connected_hook = null
+	
+	
 func random_movement():
 	var rand_force = Vector2((randf()-.5)*1000, (randf()-.5)*1000)
 	additional_vector = rand_force
