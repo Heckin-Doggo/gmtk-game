@@ -35,6 +35,10 @@ func _physics_process(delta):
 	
 	if abs(position.x - original_pos.x) > bounds and abs(position.y - original_pos.y) > bounds:
 		base_vector += Vector2(position.x-original_pos.x, position.y-original_pos.y)*-1
+	
+	if connected_hook:
+		base_vector += connected_hook.points[0] - position
+	
 	set_applied_force(base_vector + damp + additional_vector)
 	
 	# clear additional vector
