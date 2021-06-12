@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tilesets/WoodTileset.png" type="Texture" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://scenes/SpiderWeb.tscn" type="PackedScene" id=6]
 [ext_resource path="res://ui/GUI.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/spikeobstacle.tscn" type="PackedScene" id=8]
-[ext_resource path="res://assets/sprites/DarkBackground.png" type="Texture" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -471,18 +470,6 @@ points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 [node name="TestLevel" type="Node2D"]
 script = ExtResource( 4 )
 
-[node name="Background" type="TextureRect" parent="."]
-margin_left = -198.0
-margin_top = -112.0
-margin_right = 933.0
-margin_bottom = 623.0
-mouse_filter = 2
-texture = ExtResource( 9 )
-stretch_mode = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 296, 176 )
 z_index = 2
@@ -544,11 +531,11 @@ position = Vector2( 565.617, 226.808 )
 [node name="Area2D" parent="." instance=ExtResource( 8 )]
 position = Vector2( 368.391, 303.871 )
 
-[node name="Area2D2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 527.769, 368.421 )
+[node name="Area2D" parent="Area2D" instance=ExtResource( 8 )]
+position = Vector2( 159.378, 64.5504 )
 
-[node name="Area2D3" parent="." instance=ExtResource( 8 )]
-position = Vector2( 498.024, 368.421 )
+[node name="Area2D2" parent="Area2D" instance=ExtResource( 8 )]
+position = Vector2( 129.633, 64.5504 )
 
-[node name="Area2D4" parent="." instance=ExtResource( 8 )]
-position = Vector2( 563.969, 336.151 )
+[node name="Area2D3" parent="Area2D" instance=ExtResource( 8 )]
+position = Vector2( 195.578, 32.2797 )

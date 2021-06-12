@@ -30,6 +30,10 @@ config/name="Game"
 run/main_scene="res://levels/TestLevel.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+BGM="*res://autoload/BGM.tscn"
+
 [display]
 
 window/size/width=1280

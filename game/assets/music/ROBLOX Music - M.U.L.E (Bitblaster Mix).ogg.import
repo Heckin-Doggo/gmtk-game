@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ROBLOX Music - M.U.L.E (Bitblaster Mix).ogg-634d1f6733f70082da45428f1a42dcda.oggstr"
+
+[deps]
+
+source_file="res://assets/music/ROBLOX Music - M.U.L.E (Bitblaster Mix).ogg"
+dest_files=[ "res://.import/ROBLOX Music - M.U.L.E (Bitblaster Mix).ogg-634d1f6733f70082da45428f1a42dcda.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

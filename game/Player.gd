@@ -5,6 +5,11 @@ var Web = preload("res://scenes/Webshot.tscn")
 #the directions of the strings
 var webhooks = []
 
+#sounds
+onready var soundRetract = get_node("Retract")
+onready var soundShoot = get_node("Shoot")
+onready var soundArgh = get_node("argh")
+
 func _ready():
 	set_bounce(0.2)
 
@@ -38,11 +43,14 @@ func delete_hook(index):
 			hook.set_index(hook_index)
 		hook_index += 1
 	
+	soundRetract.play()
 	dead_hook.queue_free()
 
 func add_hook(new_webhook):
 	new_webhook.set_index(webhooks.size())
 	webhooks.append(new_webhook)
+	soundShoot.play()
 
 func die():
+	soundArgh.play()
 	print("you died!")
