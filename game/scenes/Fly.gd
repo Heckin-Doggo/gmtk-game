@@ -1,11 +1,13 @@
 extends RigidBody2D
 
 
-# Declare member variables here. Examples:
-var original_pos = position
-export var bounds = 5
-export var speed = 40
+# Exported script vars
+export var bounds = 5  # range in pixels from original_pos where fly will no longer move.
+export var speed = 20  # max speed at which fly will return home.
 
+# internal variables
+var original_pos = position
+var cursor_enabled = true
 var connected_hook
 
 var additional_vector = Vector2.ZERO
@@ -22,11 +24,14 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	# animation handler
+	# animation handler/state checker
 	if connected_hook:
 		$AnimatedSprite.animation = "trapped"
+		cursor_enabled = false
 	else:
 		$AnimatedSprite.animation = "default"
+		cursor_enabled = true
+
 
 func _physics_process(delta):
 	var base_vector = Vector2(0,-weight*10)  # keeps the fly in the air.
@@ -62,17 +67,23 @@ func random_movement():
 	print("set random fly force to:", rand_force)
 	
 func _on_mouse_entered():
-	$AnimatedSprite.self_modulate = Color(1,1,0)
+	# $AnimatedSprite.self_modulate = Color(1,1,0)
+	if cursor_enabled:
+		$Cursor.visible = true
+	
 
 func _on_mouse_exited():
-	$AnimatedSprite.self_modulate = Color(1,1,1)
+	# $AnimatedSprite.self_modulate = Color(1,1,1)
+	$Cursor.visible = false # no matter if its enabled or not
 
 func set_connected_hook(new_webhook):
 	connected_hook = new_webhook
 
 func _on_fly_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT and not connected_hook:
-			get_parent().create_webhook(self)
+		get_parent().create_webhook(self)
+		$Cursor.visible = false
 	elif event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT and connected_hook:
 		get_parent().delete_hook(connected_hook.get_index())
 		connected_hook = null
+		$Cursor.visible = true
