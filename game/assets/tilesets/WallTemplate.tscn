@@ -142,7 +142,6 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
 [sub_resource type="StreamTexture" id=48]
-load_path = "res://.import/WipGroundTiles.png-da4b50f3961aae5928ff606fb330c5e3.stex"
 
 [sub_resource type="TileSet" id=49]
 0/name = "WipWallTiles.png 0"
@@ -478,4 +477,6 @@ load_path = "res://.import/WipGroundTiles.png-da4b50f3961aae5928ff606fb330c5e3.s
 [node name="WallTemplate" type="TileMap"]
 tile_set = SubResource( 49 )
 cell_size = Vector2( 16, 16 )
+collision_layer = 17
+collision_mask = 2147483665
 format = 1

@@ -30,6 +30,15 @@ func _physics_process(delta):
 		damp = get_linear_velocity() * -0.9
 	
 	set_applied_force((velocity + damp) * 2)
+	if get_linear_velocity().x < 0:
+		$Sprite.flip_h = true
+	else:
+		$Sprite.flip_h = false
+	
+	if not $RayCast2D.is_colliding():
+		$Sprite.animation = "Fly"
+	else:
+		$Sprite.animation = "Default"
 
 func delete_hook(index):
 	#removes the webhook from the array
