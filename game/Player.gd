@@ -5,6 +5,9 @@ var Web = preload("res://scenes/Webshot.tscn")
 #the directions of the strings
 var webhooks = []
 
+func _ready():
+	set_bounce(0.2)
+
 func _physics_process(delta):
 	var velocity = Vector2.ZERO
 	#loops over each webhook
@@ -23,20 +26,6 @@ func _physics_process(delta):
 	
 	set_applied_force((velocity + damp) * 2)
 
-##Adds a line2d webhook and adds it to the array of current webhooks
-#func shoot_web(hook_position):
-#	var new_webhook = Web.instance()
-#
-#	#set webhooks stuff
-#	new_webhook.set_index(webhooks.size())
-#	new_webhook.points[0] = position
-#	new_webhook.points[1] = hook_position
-#	new_webhook.set_click_position()
-#
-#	#adds the new webhook to world and the array
-#	get_parent().add_child(new_webhook)
-#	webhooks.append(new_webhook)
-
 func delete_hook(index):
 	#removes the webhook from the array
 	var dead_hook = webhooks[index]
@@ -54,9 +43,3 @@ func delete_hook(index):
 func add_hook(new_webhook):
 	new_webhook.set_index(webhooks.size())
 	webhooks.append(new_webhook)
-
-#func _unhandled_input(event):
-#	if event is InputEventMouseButton:
-#		if event.button_index == BUTTON_LEFT:
-#			if event.pressed:  # make sure its actually pressed. prevent double click
-#				shoot_web(get_global_mouse_position())

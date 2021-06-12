@@ -9,6 +9,7 @@ export var speed = 20  # max speed at which fly will return home.
 var original_pos = position
 var cursor_enabled = true
 var connected_hook
+var trapped = false
 
 var additional_vector = Vector2.ZERO
 
@@ -20,6 +21,7 @@ func _ready():
 	connect("mouse_entered", self, "_on_mouse_entered")
 	connect("mouse_exited", self, "_on_mouse_exited")
 	connect("input_event",  self, "_on_fly_input_event")
+	set_bounce(0.2)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -29,7 +31,8 @@ func _process(delta):
 		$AnimatedSprite.animation = "trapped"
 		cursor_enabled = false
 	else:
-		$AnimatedSprite.animation = "default"
+		if not trapped:
+			$AnimatedSprite.animation = "default"
 		cursor_enabled = true
 
 
@@ -39,7 +42,7 @@ func _physics_process(delta):
 	
 	var damp = get_linear_velocity() * -0.4  # reduction in speed
 	
-	if abs(position.x - original_pos.x) > bounds and abs(position.y - original_pos.y) > bounds:
+	if abs(position.x - original_pos.x) > bounds and abs(position.y - original_pos.y) > bounds and not trapped:
 		move_vector += Vector2(position.x-original_pos.x, position.y-original_pos.y)*-1
 	
 	if connected_hook:
@@ -62,9 +65,10 @@ func _physics_process(delta):
 	
 	
 func random_movement():
-	var rand_force = Vector2((randf()-.5)*1000, (randf()-.5)*1000)
-	additional_vector = rand_force
-	print("set random fly force to:", rand_force)
+	if not trapped:
+		var rand_force = Vector2((randf()-.5)*1000, (randf()-.5)*1000)
+		additional_vector = rand_force
+		print("set random fly force to:", rand_force)
 	
 func _on_mouse_entered():
 	# $AnimatedSprite.self_modulate = Color(1,1,0)
@@ -87,3 +91,11 @@ func _on_fly_input_event(viewport, event, shape_idx):
 		get_parent().delete_hook(connected_hook.get_index())
 		connected_hook = null
 		$Cursor.visible = true
+
+func trap():
+	$AnimatedSprite.animation = "trapped"
+	trapped = true
+
+func untrap():
+	$AnimatedSprite.animation = "default"
+	trapped = false
