@@ -44,14 +44,15 @@ func _physics_process(delta):
 	
 	var damp = get_linear_velocity() * -0.3  # reduction in speed
 	
-	if abs(position.x - original_pos.x) > bounds and abs(position.y - original_pos.y) > bounds and not trapped:
+	if abs(position.x - original_pos.x) > bounds and abs(position.y - original_pos.y) > bounds:
 		move_vector += Vector2(position.x-original_pos.x, position.y-original_pos.y)*-1
-	
-	if connected_hook:
-		move_vector += (connected_hook.points[0] - position)* 2
 		
 	# speed limit
-	move_vector = Vector2(clamp(move_vector.x,-speed, speed), clamp(move_vector.y,-speed,speed))  # speed limit for flies
+	if not trapped:
+		move_vector = Vector2(clamp(move_vector.x,-speed, speed), clamp(move_vector.y,-speed,speed))  # speed limit for flies
+	
+	if connected_hook:
+		move_vector += (connected_hook.points[0] - position)
 	
 	set_applied_force(base_vector + damp + additional_vector + move_vector)
 	
@@ -94,11 +95,9 @@ func _on_fly_input_event(viewport, event, shape_idx):
 		connected_hook = null
 		$Cursor.visible = true
 
-func trap():
+func trap(web_pos):
 	$AnimatedSprite.animation = "trapped"
 	trapped = true
 	get_parent().add_web_flies()
-
-func untrap():
-	$AnimatedSprite.animation = "default"
-	trapped = false
+	original_pos = web_pos
+	bounds = 3

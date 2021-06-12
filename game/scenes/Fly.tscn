@@ -49,6 +49,7 @@ shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
+frame = 2
 playing = true
 
 [node name="RandomMovementTimer" type="Timer" parent="."]
@@ -57,5 +58,4 @@ autostart = true
 
 [node name="Cursor" parent="." instance=ExtResource( 5 )]
 visible = false
-frame = 1
 [connection signal="body_entered" from="." to="." method="_on_Fly_body_entered"]
