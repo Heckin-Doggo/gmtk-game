@@ -21,8 +21,12 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	# animation handler
+	if connected_hook:
+		$AnimatedSprite.animation = "trapped"
+	else:
+		$AnimatedSprite.animation = "default"
 
 func _physics_process(delta):
 	var base_vector = Vector2(0,-weight*10)  # keeps the fly in the air.
@@ -64,9 +68,3 @@ func _on_fly_input_event(viewport, event, shape_idx):
 	elif event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT and connected_hook:
 		get_parent().delete_hook(connected_hook.get_index())
 		connected_hook = null
-	
-	# animation handler
-	if connected_hook:
-		$AnimatedSprite.animation = "trapped"
-	else:
-		$AnimatedSprite.animation = "default"
