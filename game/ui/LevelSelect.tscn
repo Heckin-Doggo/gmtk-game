@@ -1,0 +1,203 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://ui/MenuItemFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/sprites/LevelButton.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/TutorialButtonPressed.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/TutorialButton.png" type="Texture" id=4]
+[ext_resource path="res://ui/DialogBox.tscn" type="PackedScene" id=5]
+[ext_resource path="res://ui/MenuTitleFont.tres" type="DynamicFont" id=6]
+[ext_resource path="res://assets/sprites/Button.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/LevelButtonPressed.png" type="Texture" id=8]
+
+[node name="LevelSelect" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ReferenceRect" type="ReferenceRect" parent="."]
+margin_right = 640.0
+margin_bottom = 360.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" parent="." instance=ExtResource( 5 )]
+margin_right = 420.0
+margin_bottom = 236.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
+margin_top = 16.0
+margin_right = 420.0
+margin_bottom = 236.0
+custom_constants/separation = 12
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer"]
+margin_right = 420.0
+margin_bottom = 30.0
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 1, 0.772549, 0, 1 )
+text = "Select a Level"
+align = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect/VBoxContainer"]
+margin_top = 42.0
+margin_right = 420.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 420, 0 )
+
+[node name="TutorialButton" type="TextureButton" parent="NinePatchRect/VBoxContainer"]
+margin_left = 162.0
+margin_top = 54.0
+margin_right = 258.0
+margin_bottom = 102.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/TutorialButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 1 )
+text = "Tutorial"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelButtons" type="HBoxContainer" parent="NinePatchRect/VBoxContainer"]
+margin_top = 114.0
+margin_right = 420.0
+margin_bottom = 162.0
+alignment = 1
+
+[node name="Level1" type="TextureButton" parent="NinePatchRect/VBoxContainer/LevelButtons"]
+margin_left = 82.0
+margin_right = 130.0
+margin_bottom = 48.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/LevelButtons/Level1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 6 )
+text = "1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level2" type="TextureButton" parent="NinePatchRect/VBoxContainer/LevelButtons"]
+margin_left = 134.0
+margin_right = 182.0
+margin_bottom = 48.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/LevelButtons/Level2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 6 )
+text = "2"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level3" type="TextureButton" parent="NinePatchRect/VBoxContainer/LevelButtons"]
+margin_left = 186.0
+margin_right = 234.0
+margin_bottom = 48.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/LevelButtons/Level3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 6 )
+text = "3"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level4" type="TextureButton" parent="NinePatchRect/VBoxContainer/LevelButtons"]
+margin_left = 238.0
+margin_right = 286.0
+margin_bottom = 48.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/LevelButtons/Level4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 6 )
+text = "4"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level5" type="TextureButton" parent="NinePatchRect/VBoxContainer/LevelButtons"]
+margin_left = 290.0
+margin_right = 338.0
+margin_bottom = 48.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/LevelButtons/Level5"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 6 )
+text = "5"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReturnButtonContainer" type="HBoxContainer" parent="NinePatchRect/VBoxContainer"]
+margin_top = 174.0
+margin_right = 420.0
+margin_bottom = 206.0
+alignment = 2
+
+[node name="ReturnButton" type="TextureButton" parent="NinePatchRect/VBoxContainer/ReturnButtonContainer"]
+margin_left = 316.0
+margin_right = 406.0
+margin_bottom = 32.0
+texture_normal = ExtResource( 7 )
+
+[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/ReturnButtonContainer/ReturnButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 0.823529, 0.596078, 1 )
+text = "Go Back"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect/VBoxContainer/ReturnButtonContainer"]
+margin_left = 410.0
+margin_right = 420.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 10, 0 )
