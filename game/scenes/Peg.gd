@@ -8,6 +8,12 @@ signal peg_clicked
 func _ready():
 	connect("input_event",  self, "_on_Peg_input_event")
 
+func _process(delta):
+	if Input.get_action_strength("ui_accept") > 0 and connected_hook:
+		get_parent().delete_hook(connected_hook.get_index())
+		connected_hook = null
+		$AnimatedSprite.animation = "off"
+
 func set_connected_hook(webhook):
 	connected_hook = webhook
 
