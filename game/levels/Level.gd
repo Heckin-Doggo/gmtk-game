@@ -3,6 +3,7 @@ class_name Level
 
 # preloaded
 var Web = preload("res://scenes/Webshot.tscn")
+var RestartDialog = preload("res://ui/RestartDialog.tscn")
 onready var player = get_node("Player")
 
 # global win sound
@@ -11,6 +12,13 @@ onready var WinSound = get_node("/root/WinSound")
 # script variables
 var flies = 0
 var webbed_flies = 0
+
+
+func _ready():
+	if has_node("Player"):
+		get_node("Player").connect("died", self, "show_restart_dialog")
+
+
 
 func add_flies():
 	flies += 1
@@ -39,5 +47,9 @@ func create_webhook(hooked_object):
 
 func delete_hook(index):
 	player.delete_hook(index)
-
+	
+func show_restart_dialog():
+	var new_dialog = RestartDialog.instance()
+	if get_node_or_null("CanvasLayer"):
+		get_node_or_null("CanvasLayer").add_child(new_dialog)
 

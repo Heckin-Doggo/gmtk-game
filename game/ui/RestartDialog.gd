@@ -1,7 +1,7 @@
 extends Control
 
 
-onready var Music = ("/root/BGM")
+onready var Music = get_node("/root/BGM")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -10,4 +10,5 @@ func _ready():
 
 func restart_level():
 	Music.play()  # restart after sad death
+	print("working restart")
 	get_tree().reload_current_scene()

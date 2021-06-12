@@ -6,6 +6,7 @@ var Web = preload("res://scenes/Webshot.tscn")
 var webhooks = []
 
 var is_dead = false
+signal died
 
 #sounds
 onready var soundRetract = get_node("Retract")
@@ -72,4 +73,6 @@ func die():
 	webhooks = []
 	for hook in hook_array:
 		hook.queue_free()
+	emit_signal("died")   # Level.gd is listening for this
+	Music.stop()
 	print("you died!")
