@@ -11,7 +11,10 @@ func set_click_position():
 #sets the index, see above
 func set_index(index_num):
 	index = index_num
-	
+
+func get_index():
+	return index
+
 #highlights the hook
 func _on_Area2D_mouse_entered():
 	default_color = Color(0.55, 0, 0, 1)
@@ -27,7 +30,7 @@ func update_position(new_position):
 	points[0] = new_position
 	set_click_position()
 
-func _unhandled_input(event):
-	if event is InputEventMouseButton:
-		if event.button_index == BUTTON_RIGHT and selectable:
-			get_parent().get_child(0).delete_hook(index)
+#func _unhandled_input(event):
+#	if event is InputEventMouseButton:
+#		if event.button_index == BUTTON_RIGHT and selectable:
+#			get_parent().delete_hook(index)
