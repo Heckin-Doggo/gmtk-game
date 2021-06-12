@@ -16,6 +16,7 @@ func _process(delta):
 		get_parent().delete_hook(connected_hook.get_index())
 		connected_hook = null
 		$AnimatedSprite.animation = "off"
+		cursor_enabled = true
 
 func set_connected_hook(webhook):
 	connected_hook = webhook
