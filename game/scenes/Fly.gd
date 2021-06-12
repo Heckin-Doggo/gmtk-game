@@ -42,13 +42,13 @@ func _physics_process(delta):
 	var base_vector = Vector2(0,-weight*10)  # keeps the fly in the air.
 	var move_vector = Vector2.ZERO
 	
-	var damp = get_linear_velocity() * -0.4  # reduction in speed
+	var damp = get_linear_velocity() * -0.3  # reduction in speed
 	
 	if abs(position.x - original_pos.x) > bounds and abs(position.y - original_pos.y) > bounds and not trapped:
 		move_vector += Vector2(position.x-original_pos.x, position.y-original_pos.y)*-1
 	
 	if connected_hook:
-		move_vector += connected_hook.points[0] - position
+		move_vector += (connected_hook.points[0] - position)* 2
 		
 	# speed limit
 	move_vector = Vector2(clamp(move_vector.x,-speed, speed), clamp(move_vector.y,-speed,speed))  # speed limit for flies
