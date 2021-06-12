@@ -64,3 +64,9 @@ func _on_fly_input_event(viewport, event, shape_idx):
 	elif event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT and connected_hook:
 		get_parent().delete_hook(connected_hook.get_index())
 		connected_hook = null
+	
+	# animation handler
+	if connected_hook:
+		$AnimatedSprite.animation = "trapped"
+	else:
+		$AnimatedSprite.animation = "default"
