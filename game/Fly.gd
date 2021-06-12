@@ -13,6 +13,8 @@ var additional_vector = Vector2.ZERO
 func _ready():
 	original_pos = position
 	$RandomMovementTimer.connect("timeout", self, "random_movement")
+	connect("mouse_entered", self, "_on_mouse_entered")
+	connect("mouse_exited", self, "_on_mouse_exited")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -35,3 +37,9 @@ func random_movement():
 	var rand_force = Vector2((randf()-.5)*1000, (randf()-.5)*1000)
 	additional_vector = rand_force
 	print("set random fly force to:", rand_force)
+	
+func _on_mouse_entered():
+	$AnimatedSprite.self_modulate = Color(1,1,0)
+
+func _on_mouse_exited():
+	$AnimatedSprite.self_modulate = Color(1,1,1)
