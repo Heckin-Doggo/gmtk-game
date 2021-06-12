@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://levels/Level.gd" type="Script" id=1]
 [ext_resource path="res://scenes/TileMap.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scenes/Fly.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/SpiderWeb.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/Peg.tscn" type="PackedScene" id=6]
+[ext_resource path="res://ui/GUI.tscn" type="PackedScene" id=7]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 1 )
@@ -52,3 +53,5 @@ position = Vector2( 269.399, 428.507 )
 
 [node name="Peg10" parent="." instance=ExtResource( 6 )]
 position = Vector2( 56.0824, 569.145 )
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 7 )]
