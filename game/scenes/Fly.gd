@@ -3,8 +3,8 @@ extends RigidBody2D
 
 # Declare member variables here. Examples:
 var original_pos = position
-export var dampening = 10
 export var bounds = 5
+export var speed = 40
 
 var connected_hook
 
@@ -30,16 +30,20 @@ func _process(delta):
 
 func _physics_process(delta):
 	var base_vector = Vector2(0,-weight*10)  # keeps the fly in the air.
+	var move_vector = Vector2.ZERO
 	
 	var damp = get_linear_velocity() * -0.4  # reduction in speed
 	
 	if abs(position.x - original_pos.x) > bounds and abs(position.y - original_pos.y) > bounds:
-		base_vector += Vector2(position.x-original_pos.x, position.y-original_pos.y)*-1
+		move_vector += Vector2(position.x-original_pos.x, position.y-original_pos.y)*-1
 	
 	if connected_hook:
-		base_vector += connected_hook.points[0] - position
+		move_vector += connected_hook.points[0] - position
+		
+	# speed limit
+	move_vector = Vector2(clamp(move_vector.x,-speed, speed), clamp(move_vector.y,-speed,speed))  # speed limit for flies
 	
-	set_applied_force(base_vector + damp + additional_vector)
+	set_applied_force(base_vector + damp + additional_vector + move_vector)
 	
 	# clear additional vector
 	additional_vector = Vector2.ZERO
