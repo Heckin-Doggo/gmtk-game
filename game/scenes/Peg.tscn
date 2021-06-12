@@ -18,7 +18,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 4, 4 )
+extents = Vector2( 8, 8 )
 
 [node name="Peg" type="StaticBody2D"]
 input_pickable = true

@@ -16,9 +16,14 @@ rotation = 1.5708
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+z_index = 2
 texture = ExtResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
+drag_margin_left = 0.6
+drag_margin_top = 0.6
+drag_margin_right = 0.6
+drag_margin_bottom = 0.5
