@@ -1,0 +1,111 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/TileMap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Peg.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Fly.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/SpiderWeb.tscn" type="PackedScene" id=4]
+[ext_resource path="res://levels/Level.gd" type="Script" id=5]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=6]
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Fly" parent="." instance=ExtResource( 3 )]
+position = Vector2( 140.624, 260.655 )
+
+[node name="SpiderWeb" parent="." instance=ExtResource( 4 )]
+position = Vector2( 191.348, 548.98 )
+rotation = 1.5708
+
+[node name="WoodenTileMap" parent="." instance=ExtResource( 1 )]
+tile_data = PoolIntArray( 65535, 0, 4, 0, 0, 196609, 1, 0, 196609, 2, 0, 196609, 3, 0, 196609, 4, 0, 196609, 5, 0, 196609, 6, 0, 196609, 7, 0, 196609, 8, 0, 196609, 9, 0, 196609, 10, 0, 196609, 11, 0, 196609, 12, 0, 196609, 13, 0, 196609, 14, 0, 196609, 15, 0, 196609, 16, 0, 196609, 17, 0, 196609, 18, 0, 196609, 19, 0, 7, 131070, 0, 0, 131071, 0, 131079, 65555, 0, 196612, 65556, 0, 196609, 65557, 0, 7, 196606, 0, 65536, 196607, 0, 65538, 131093, 0, 196612, 131094, 0, 196609, 131095, 0, 7, 262142, 0, 131072, 262143, 0, 65543, 196631, 0, 196612, 196632, 0, 7, 327679, 0, 65539, 262168, 0, 196612, 262169, 0, 196609, 262170, 0, 7, 393215, 0, 65539, 327706, 0, 196612, 327707, 0, 7, 458751, 0, 65539, 393243, 0, 131076, 393244, 0, 2, 524287, 0, 65539, 458779, 0, 65536, 458780, 0, 131077, 458781, 0, 2, 589823, 0, 65539, 524315, 0, 65536, 524316, 0, 65537, 524317, 0, 65538, 655359, 0, 65539, 589851, 0, 65536, 589852, 0, 65537, 589853, 0, 65538, 720895, 0, 65539, 655387, 0, 65536, 655388, 0, 65537, 655389, 0, 65538, 786431, 0, 196612, 720896, 0, 7, 720923, 0, 65536, 720924, 0, 65537, 720925, 0, 65538, 786432, 0, 65539, 786459, 0, 65540, 786460, 0, 131073, 786461, 0, 131074, 851968, 0, 65539, 851994, 0, 4, 851995, 0, 196615, 917504, 0, 131076, 917505, 0, 1, 917506, 0, 2, 917529, 0, 4, 917530, 0, 196615, 983040, 0, 65536, 983041, 0, 65537, 983042, 0, 131077, 983043, 0, 2, 983048, 0, 0, 983049, 0, 5, 983050, 0, 196609, 983051, 0, 196609, 983052, 0, 196610, 983064, 0, 4, 983065, 0, 196615, 1048576, 0, 65536, 1048577, 0, 65537, 1048578, 0, 65537, 1048579, 0, 65538, 1048584, 0, 65536, 1048585, 0, 65538, 1048599, 0, 196608, 1048600, 0, 196615, 1114112, 0, 65536, 1114113, 0, 65537, 1114114, 0, 65537, 1114115, 0, 65538, 1114120, 0, 65536, 1114121, 0, 65538, 1179648, 0, 65536, 1179649, 0, 65537, 1179650, 0, 65537, 1179651, 0, 131077, 1179652, 0, 2, 1179656, 0, 65536, 1179657, 0, 65538, 1245184, 0, 65536, 1245185, 0, 65537, 1245186, 0, 65537, 1245187, 0, 65537, 1245188, 0, 131077, 1245189, 0, 1, 1245190, 0, 1, 1245191, 0, 1, 1245192, 0, 131078, 1245193, 0, 65538, 1310720, 0, 65536, 1310721, 0, 65537, 1310722, 0, 65537, 1310723, 0, 65537, 1310724, 0, 65537, 1310725, 0, 65537, 1310726, 0, 65537, 1310727, 0, 65537, 1310728, 0, 65537, 1310729, 0, 65538, 1376256, 0, 131072, 1376257, 0, 131073, 1376258, 0, 131073, 1376259, 0, 131073, 1376260, 0, 131073, 1376261, 0, 131073, 1376262, 0, 131073, 1376263, 0, 131073, 1376264, 0, 131073, 1376265, 0, 131074 )
+
+[node name="Fly2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 299.47, 217.94 )
+
+[node name="Fly3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 479.673, 334.071 )
+
+[node name="Peg" parent="." instance=ExtResource( 2 )]
+position = Vector2( 97.9094, 410.157 )
+
+[node name="Peg2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 214.04, 407.487 )
+
+[node name="Peg3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 330.171, 410.157 )
+
+[node name="Peg4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 487.682, 414.162 )
+
+[node name="Peg5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 623.836, 420.836 )
+
+[node name="Peg6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 747.976, 418.166 )
+
+[node name="Peg7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 693.248, 340.746 )
+
+[node name="Peg8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 553.09, 338.076 )
+
+[node name="Peg9" parent="." instance=ExtResource( 2 )]
+position = Vector2( 406.257, 326.062 )
+
+[node name="Peg10" parent="." instance=ExtResource( 2 )]
+position = Vector2( 275.443, 334.071 )
+
+[node name="Peg11" parent="." instance=ExtResource( 2 )]
+position = Vector2( 149.968, 334.071 )
+
+[node name="Peg12" parent="." instance=ExtResource( 2 )]
+position = Vector2( 71.2126, 272.669 )
+
+[node name="Peg13" parent="." instance=ExtResource( 2 )]
+position = Vector2( 226.054, 251.311 )
+
+[node name="Peg14" parent="." instance=ExtResource( 2 )]
+position = Vector2( 347.524, 237.963 )
+
+[node name="Peg15" parent="." instance=ExtResource( 2 )]
+position = Vector2( 494.357, 251.311 )
+
+[node name="Peg16" parent="." instance=ExtResource( 2 )]
+position = Vector2( 630.51, 255.316 )
+
+[node name="Peg17" parent="." instance=ExtResource( 2 )]
+position = Vector2( 774.673, 255.316 )
+
+[node name="Peg18" parent="." instance=ExtResource( 2 )]
+position = Vector2( 693.248, 167.216 )
+
+[node name="Peg19" parent="." instance=ExtResource( 2 )]
+position = Vector2( 569.108, 148.529 )
+
+[node name="Peg20" parent="." instance=ExtResource( 2 )]
+position = Vector2( 423.61, 185.904 )
+
+[node name="Peg21" parent="." instance=ExtResource( 2 )]
+position = Vector2( 266.099, 171.221 )
+
+[node name="Peg22" parent="." instance=ExtResource( 2 )]
+position = Vector2( 140.624, 172.556 )
+
+[node name="Peg23" parent="." instance=ExtResource( 2 )]
+position = Vector2( 44.5159, 104.479 )
+
+[node name="Peg24" parent="." instance=ExtResource( 2 )]
+position = Vector2( 218.045, 97.8048 )
+
+[node name="Peg25" parent="." instance=ExtResource( 2 )]
+position = Vector2( 384.9, 88.4609 )
+
+[node name="Peg26" parent="." instance=ExtResource( 2 )]
+position = Vector2( 543.746, 100.474 )
+
+[node name="Peg27" parent="." instance=ExtResource( 2 )]
+position = Vector2( 182.004, 551.65 )
+
+[node name="Player" parent="." instance=ExtResource( 6 )]
+position = Vector2( 148.633, 547.646 )

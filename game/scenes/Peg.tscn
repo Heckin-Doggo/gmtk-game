@@ -20,7 +20,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 12, 12 )
+extents = Vector2( 15, 15 )
 
 [node name="Peg" type="StaticBody2D"]
 input_pickable = true
@@ -42,3 +42,4 @@ texture = ExtResource( 4 )
 
 [node name="Cursor" parent="." instance=ExtResource( 5 )]
 visible = false
+frame = 2
