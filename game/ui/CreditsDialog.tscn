@@ -99,15 +99,15 @@ margin_right = 480.0
 margin_bottom = 242.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "A game by NuclearChair and smubear
+text = "\"A Web o' Flies\" by NuclearChair and smubear
 Created for GTMK Jam 2021: Joined Together
 
 Additional Credits:
-Music - M.U.L.E. (Bitblaster Mix)
-Sound Effects - Bfxr & Half Life 1
+Sound Effects - Windows 3.1 & Half Life 1
 
 Special Thanks
 Mark Brown and everyone helping to run this jam.
+BeepBox
 Lyra Lupus
 and You! For playing this game!"
 align = 1
