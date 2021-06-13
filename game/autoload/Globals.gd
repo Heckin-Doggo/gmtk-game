@@ -2,6 +2,7 @@ extends Node
 
 var max_flies = 0
 var flies_left = 0
+var volume_BGM = 2
 
 func add_max_flies():
 	max_flies += 1

@@ -1,0 +1,224 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://levels/Level.gd" type="Script" id=1]
+[ext_resource path="res://scenes/TileMap.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ui/GUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Fly.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://ui/NextLevelDialog.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/SpiderWeb.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/Sign.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/Peg.tscn" type="PackedScene" id=9]
+[ext_resource path="res://ui/MenuItemFont.tres" type="DynamicFont" id=10]
+[ext_resource path="res://scenes/spikeobstacle.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/sprites/tuts/remove_strings.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/tuts/avoid_spikes.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/tuts/in_the_web.png" type="Texture" id=14]
+
+[node name="BasicLevel" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="WoodenTileMap" parent="." instance=ExtResource( 2 )]
+tile_data = PoolIntArray( 196603, 0, 0, 196604, 0, 1, 196605, 0, 1, 196606, 0, 1, 196607, 0, 1, 131072, 0, 1, 131073, 0, 1, 131074, 0, 1, 131075, 0, 1, 131076, 0, 1, 131077, 0, 1, 131078, 0, 1, 131079, 0, 1, 131080, 0, 1, 131081, 0, 1, 131082, 0, 1, 131083, 0, 1, 131084, 0, 1, 131085, 0, 1, 131086, 0, 1, 131087, 0, 1, 131088, 0, 1, 131089, 0, 1, 131090, 0, 1, 131091, 0, 1, 131092, 0, 1, 131093, 0, 1, 131094, 0, 1, 131095, 0, 1, 131096, 0, 1, 131097, 0, 1, 131098, 0, 1, 131099, 0, 1, 131100, 0, 1, 131101, 0, 1, 131102, 0, 1, 131103, 0, 1, 131104, 0, 1, 131105, 0, 1, 131106, 0, 1, 131107, 0, 1, 131108, 0, 1, 131109, 0, 1, 131110, 0, 1, 131111, 0, 1, 131112, 0, 1, 131113, 0, 1, 131114, 0, 1, 131115, 0, 1, 131116, 0, 1, 131117, 0, 1, 131118, 0, 1, 131119, 0, 1, 131120, 0, 1, 131121, 0, 1, 131122, 0, 1, 131123, 0, 1, 131124, 0, 1, 131125, 0, 1, 131126, 0, 1, 131127, 0, 1, 131128, 0, 1, 131129, 0, 1, 131130, 0, 1, 131131, 0, 1, 131132, 0, 1, 131133, 0, 1, 131134, 0, 1, 131135, 0, 1, 131136, 0, 1, 131137, 0, 1, 131138, 0, 1, 131139, 0, 1, 131140, 0, 1, 131141, 0, 1, 131142, 0, 1, 131143, 0, 1, 131144, 0, 1, 131145, 0, 1, 131146, 0, 1, 131147, 0, 1, 131148, 0, 2, 262139, 0, 65536, 262140, 0, 65541, 262141, 0, 131073, 262142, 0, 131073, 262143, 0, 131073, 196608, 0, 131073, 196609, 0, 131073, 196610, 0, 131073, 196611, 0, 131073, 196612, 0, 131073, 196613, 0, 131073, 196614, 0, 131073, 196615, 0, 131073, 196616, 0, 131073, 196617, 0, 131073, 196618, 0, 131073, 196619, 0, 131073, 196620, 0, 131073, 196621, 0, 131073, 196622, 0, 131073, 196623, 0, 131073, 196624, 0, 131073, 196625, 0, 131073, 196626, 0, 131073, 196627, 0, 131073, 196628, 0, 131073, 196629, 0, 131073, 196630, 0, 131073, 196631, 0, 131073, 196632, 0, 131073, 196633, 0, 131073, 196634, 0, 131073, 196635, 0, 131073, 196636, 0, 131073, 196637, 0, 131073, 196638, 0, 131073, 196639, 0, 131073, 196640, 0, 131073, 196641, 0, 131073, 196642, 0, 131073, 196643, 0, 131073, 196644, 0, 131073, 196645, 0, 131073, 196646, 0, 131073, 196647, 0, 131073, 196648, 0, 131073, 196649, 0, 131073, 196650, 0, 131073, 196651, 0, 131073, 196652, 0, 131073, 196653, 0, 131073, 196654, 0, 131073, 196655, 0, 131073, 196656, 0, 131073, 196657, 0, 131073, 196658, 0, 131073, 196659, 0, 131073, 196660, 0, 131073, 196661, 0, 131073, 196662, 0, 131073, 196663, 0, 131073, 196664, 0, 131073, 196665, 0, 131073, 196666, 0, 131073, 196667, 0, 131073, 196668, 0, 131073, 196669, 0, 131073, 196670, 0, 131073, 196671, 0, 131073, 196672, 0, 131073, 196673, 0, 131073, 196674, 0, 131073, 196675, 0, 131073, 196676, 0, 131073, 196677, 0, 131073, 196678, 0, 131073, 196679, 0, 131073, 196680, 0, 65542, 196681, 0, 65537, 196682, 0, 65537, 196683, 0, 65537, 196684, 0, 65538, 327675, 0, 65536, 327676, 0, 65538, 262216, 0, 131072, 262217, 0, 131073, 262218, 0, 131073, 262219, 0, 131073, 262220, 0, 65543, 393211, 0, 65536, 393212, 0, 65538, 327756, 0, 65539, 458747, 0, 65536, 458748, 0, 65538, 393292, 0, 65539, 524283, 0, 65536, 524284, 0, 65538, 458828, 0, 65539, 589819, 0, 65536, 589820, 0, 65538, 524364, 0, 65539, 655355, 0, 65536, 655356, 0, 65538, 589896, 0, 0, 589897, 0, 1, 589898, 0, 1, 589899, 0, 1, 589900, 0, 131079, 720891, 0, 65536, 720892, 0, 131077, 720893, 0, 1, 720894, 0, 1, 720895, 0, 1, 655360, 0, 1, 655361, 0, 1, 655362, 0, 1, 655363, 0, 1, 655364, 0, 1, 655365, 0, 1, 655366, 0, 1, 655367, 0, 1, 655368, 0, 1, 655369, 0, 1, 655370, 0, 1, 655371, 0, 1, 655372, 0, 1, 655373, 0, 1, 655374, 0, 1, 655375, 0, 1, 655376, 0, 1, 655377, 0, 1, 655378, 0, 1, 655379, 0, 1, 655380, 0, 1, 655381, 0, 1, 655382, 0, 1, 655383, 0, 1, 655384, 0, 1, 655385, 0, 1, 655386, 0, 1, 655387, 0, 1, 655388, 0, 1, 655389, 0, 1, 655390, 0, 1, 655391, 0, 1, 655392, 0, 1, 655393, 0, 1, 655394, 0, 1, 655395, 0, 1, 655396, 0, 1, 655397, 0, 1, 655398, 0, 1, 655399, 0, 1, 655400, 0, 1, 655401, 0, 1, 655402, 0, 1, 655403, 0, 1, 655404, 0, 1, 655405, 0, 1, 655406, 0, 1, 655407, 0, 1, 655408, 0, 1, 655409, 0, 1, 655410, 0, 1, 655411, 0, 1, 655412, 0, 1, 655413, 0, 1, 655414, 0, 1, 655415, 0, 1, 655416, 0, 1, 655417, 0, 1, 655418, 0, 1, 655419, 0, 1, 655420, 0, 1, 655421, 0, 1, 655422, 0, 2, 655430, 0, 0, 655431, 0, 5, 655432, 0, 196614, 655433, 0, 131073, 655434, 0, 131073, 655435, 0, 131073, 655436, 0, 131074, 786427, 0, 131072, 786428, 0, 131073, 786429, 0, 131073, 786430, 0, 131073, 786431, 0, 131073, 720896, 0, 131073, 720897, 0, 131073, 720898, 0, 131073, 720899, 0, 131073, 720900, 0, 131073, 720901, 0, 131073, 720902, 0, 131073, 720903, 0, 131073, 720904, 0, 131073, 720905, 0, 131073, 720906, 0, 131073, 720907, 0, 131073, 720908, 0, 131073, 720909, 0, 131073, 720910, 0, 131073, 720911, 0, 131073, 720912, 0, 131073, 720913, 0, 131073, 720914, 0, 131073, 720915, 0, 131073, 720916, 0, 131073, 720917, 0, 131073, 720918, 0, 131073, 720919, 0, 131073, 720920, 0, 131073, 720921, 0, 131073, 720922, 0, 131073, 720923, 0, 131073, 720924, 0, 131073, 720925, 0, 131073, 720926, 0, 131073, 720927, 0, 131073, 720928, 0, 131073, 720929, 0, 131073, 720930, 0, 131073, 720931, 0, 131073, 720932, 0, 131073, 720933, 0, 131073, 720934, 0, 131073, 720935, 0, 131073, 720936, 0, 131073, 720937, 0, 131073, 720938, 0, 131073, 720939, 0, 131073, 720940, 0, 131073, 720941, 0, 131073, 720942, 0, 131073, 720943, 0, 131073, 720944, 0, 131073, 720945, 0, 131073, 720946, 0, 131073, 720947, 0, 131073, 720948, 0, 131073, 720949, 0, 131073, 720950, 0, 131073, 720951, 0, 131073, 720952, 0, 131073, 720953, 0, 131073, 720954, 0, 131073, 720955, 0, 131073, 720956, 0, 131073, 720957, 0, 131073, 720958, 0, 196613, 720959, 0, 6, 720960, 0, 2, 720965, 0, 0, 720966, 0, 131078, 720967, 0, 65538, 786495, 0, 131072, 786496, 0, 9, 786497, 0, 1, 786498, 0, 1, 786499, 0, 1, 786500, 0, 1, 786501, 0, 131078, 786502, 0, 65537, 786503, 0, 65538, 852032, 0, 131072, 852033, 0, 131073, 852034, 0, 131073, 852035, 0, 131073, 852036, 0, 131073, 852037, 0, 131073, 852038, 0, 131073, 852039, 0, 131074 )
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 120, 296 )
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 3 )]
+
+[node name="NextLevelDialog" parent="CanvasLayer" instance=ExtResource( 6 )]
+next_level_path = "res://levels/Level1.tscn"
+
+[node name="SpiderWeb" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2368, 224 )
+
+[node name="Fly" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2144, 200 )
+
+[node name="Fly2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2144, 264 )
+
+[node name="LabelSign" parent="." instance=ExtResource( 8 )]
+position = Vector2( 40, 248 )
+
+[node name="Label" type="Label" parent="LabelSign"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -72.0
+margin_top = -72.0
+margin_right = -72.0
+margin_bottom = -86.0
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Be careful for nails poking through the wood. They're kinda sharp!"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelSign2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 568, 248 )
+
+[node name="Label" type="Label" parent="LabelSign2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -72.0
+margin_top = -72.0
+margin_right = -72.0
+margin_bottom = -86.0
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "To release yourself from multiple strings, press SPACE or RIGHT CLICK."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelSign4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 992, 248 )
+
+[node name="Label" type="Label" parent="LabelSign4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -72.0
+margin_top = -72.0
+margin_right = -72.0
+margin_bottom = -86.0
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "In order to advance to the next level, collect all the flies into your web. A spider can't move on an empty stomach!"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelSign3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1664, 248 )
+
+[node name="Label" type="Label" parent="LabelSign3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -72.0
+margin_top = -72.0
+margin_right = -72.0
+margin_bottom = -86.0
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Tip!
+Release your string right before you get to the nail or fly. Your momentum will be retained!"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelSign5" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1440, 248 )
+
+[node name="Label" type="Label" parent="LabelSign5"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -72.0
+margin_top = -72.0
+margin_right = -72.0
+margin_bottom = -86.0
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Try getting some distance before launching into these flies. Pushing works better than pulling!"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpriteSign" parent="." instance=ExtResource( 8 )]
+position = Vector2( 272, 248 )
+
+[node name="Sprite" type="Sprite" parent="SpriteSign"]
+position = Vector2( 0, -5 )
+texture = ExtResource( 13 )
+
+[node name="SpriteSign2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 760, 248 )
+
+[node name="Sprite" type="Sprite" parent="SpriteSign2"]
+position = Vector2( 0, -5 )
+texture = ExtResource( 12 )
+
+[node name="SpriteSign3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1184, 248 )
+
+[node name="Sprite" type="Sprite" parent="SpriteSign3"]
+position = Vector2( 0, -5 )
+texture = ExtResource( 14 )
+
+[node name="Peg" parent="." instance=ExtResource( 9 )]
+position = Vector2( 168, 240 )
+
+[node name="Peg3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 456, 200 )
+
+[node name="Peg2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 368, 240 )
+
+[node name="Peg5" parent="." instance=ExtResource( 9 )]
+position = Vector2( 368, 160 )
+
+[node name="Peg4" parent="." instance=ExtResource( 9 )]
+position = Vector2( 664, 240 )
+
+[node name="Peg6" parent="." instance=ExtResource( 9 )]
+position = Vector2( 616, 152 )
+
+[node name="Peg7" parent="." instance=ExtResource( 9 )]
+position = Vector2( 712, 152 )
+
+[node name="Peg8" parent="." instance=ExtResource( 9 )]
+position = Vector2( 880, 240 )
+
+[node name="Peg9" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1088, 240 )
+
+[node name="Peg10" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1304, 240 )
+
+[node name="Peg11" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1392, 152 )
+
+[node name="Peg12" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1488, 152 )
+
+[node name="Peg14" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1768, 240 )
+
+[node name="Peg15" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1840, 296 )
+
+[node name="Peg16" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1840, 184 )
+
+[node name="Peg17" parent="." instance=ExtResource( 9 )]
+position = Vector2( 2096, 208 )
+
+[node name="Peg18" parent="." instance=ExtResource( 9 )]
+position = Vector2( 2096, 264 )
+
+[node name="Peg19" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1944, 296 )
+
+[node name="Peg20" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1944, 184 )
+
+[node name="Peg13" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1560, 240 )
+
+[node name="Area2D2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 392, 304 )

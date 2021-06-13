@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://ui/DialogBox.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ui/MenuItemFont.tres" type="DynamicFont" id=2]
@@ -6,6 +6,11 @@
 [ext_resource path="res://assets/sprites/Button.png" type="Texture" id=4]
 [ext_resource path="res://ui/MenuTitleFont.tres" type="DynamicFont" id=5]
 [ext_resource path="res://ui/GameMenu.gd" type="Script" id=6]
+[ext_resource path="res://assets/sprites/Sound3.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/Sound2.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/Sound1.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/Sound0.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/VolBG.png" type="Texture" id=11]
 
 [node name="GameMenu" type="Control"]
 anchor_right = 1.0
@@ -140,3 +145,51 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="VolumeIcon" type="CenterContainer" parent="."]
+margin_left = 579.0
+margin_top = 303.0
+margin_right = 619.0
+margin_bottom = 343.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Volume0" type="TextureRect" parent="VolumeIcon"]
+visible = false
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 36.0
+margin_bottom = 36.0
+texture = ExtResource( 10 )
+
+[node name="Volume1" type="TextureRect" parent="VolumeIcon"]
+visible = false
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 36.0
+margin_bottom = 36.0
+texture = ExtResource( 9 )
+
+[node name="Volume2" type="TextureRect" parent="VolumeIcon"]
+visible = false
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 36.0
+margin_bottom = 36.0
+texture = ExtResource( 8 )
+
+[node name="Volume3" type="TextureRect" parent="VolumeIcon"]
+visible = false
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 36.0
+margin_bottom = 36.0
+texture = ExtResource( 7 )
+
+[node name="VolButton" type="TextureButton" parent="VolumeIcon"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 36.0
+margin_bottom = 36.0
+texture_normal = ExtResource( 11 )
