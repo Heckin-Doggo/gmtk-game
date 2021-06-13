@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Game"
-run/main_scene="res://levels/TestLevel.tscn"
+run/main_scene="res://ui/TitleScreen.tscn"
 config/icon="res://icon.png"
 
 [autoload]
