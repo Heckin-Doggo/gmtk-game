@@ -2,12 +2,14 @@ extends Control
 
 # other dialogs
 var LevelSelect = preload("res://ui/LevelSelect.tscn")
+var ControlsDialog = preload("res://ui/ControlsDialog.tscn")
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$NinePatchRect/VBoxContainer/RestartButton.connect("pressed", self, "reload_level")
 	$NinePatchRect/VBoxContainer/LevelSelectButton.connect("pressed", self, "level_select")
+	$NinePatchRect/VBoxContainer/ControlsButton.connect("pressed", self, "show_controls")
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
@@ -22,3 +24,8 @@ func level_select():
 		var new_dialog = LevelSelect.instance()
 		get_parent().add_child(new_dialog)
 
+
+func show_controls():
+	if get_parent().has_node("ControlsDialog") == false:
+		var new_dialog = ControlsDialog.instance()
+		get_parent().add_child(new_dialog)
