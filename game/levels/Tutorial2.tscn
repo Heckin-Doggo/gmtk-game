@@ -53,7 +53,7 @@ texture = ExtResource( 15 )
 position = Vector2( 2144, 200 )
 
 [node name="Fly2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 2144, 264 )
+position = Vector2( 2144, 272 )
 
 [node name="LabelSign" parent="." instance=ExtResource( 8 )]
 position = Vector2( 40, 248 )
@@ -223,19 +223,34 @@ position = Vector2( 1840, 296 )
 position = Vector2( 1840, 184 )
 
 [node name="Peg17" parent="." instance=ExtResource( 9 )]
-position = Vector2( 2096, 208 )
+position = Vector2( 2200, 208 )
 
 [node name="Peg18" parent="." instance=ExtResource( 9 )]
-position = Vector2( 2096, 264 )
+position = Vector2( 2096, 272 )
+
+[node name="Peg24" parent="." instance=ExtResource( 9 )]
+position = Vector2( 2200, 272 )
+
+[node name="Peg25" parent="." instance=ExtResource( 9 )]
+position = Vector2( 2096, 208 )
+
+[node name="Peg22" parent="." instance=ExtResource( 9 )]
+position = Vector2( 2144, 352 )
+
+[node name="Peg23" parent="." instance=ExtResource( 9 )]
+position = Vector2( 2144, 152 )
 
 [node name="Peg21" parent="." instance=ExtResource( 9 )]
 position = Vector2( 2280, 232 )
 
 [node name="Peg19" parent="." instance=ExtResource( 9 )]
-position = Vector2( 1944, 296 )
+position = Vector2( 1952, 296 )
+
+[node name="Peg26" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1896, 240 )
 
 [node name="Peg20" parent="." instance=ExtResource( 9 )]
-position = Vector2( 1944, 184 )
+position = Vector2( 1952, 184 )
 
 [node name="Peg13" parent="." instance=ExtResource( 9 )]
 position = Vector2( 1560, 240 )

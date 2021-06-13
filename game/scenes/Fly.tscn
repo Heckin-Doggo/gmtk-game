@@ -50,7 +50,6 @@ shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
-frame = 2
 playing = true
 
 [node name="RandomMovementTimer" type="Timer" parent="."]
@@ -59,8 +58,9 @@ autostart = true
 
 [node name="Cursor" parent="." instance=ExtResource( 5 )]
 visible = false
-frame = 1
+frame = 2
 
 [node name="Nung" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 6 )
+volume_db = -15.0
 [connection signal="body_entered" from="." to="." method="_on_Fly_body_entered"]
