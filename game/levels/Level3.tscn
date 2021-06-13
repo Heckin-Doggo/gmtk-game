@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://levels/Level.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Fly.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://scenes/Peg.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/sprites/DarkBackground.png" type="Texture" id=7]
+[ext_resource path="res://ui/GUI.tscn" type="PackedScene" id=8]
+[ext_resource path="res://ui/NextLevelDialog.tscn" type="PackedScene" id=9]
 
 [node name="Level3" type="Node2D"]
 script = ExtResource( 1 )
@@ -78,13 +80,13 @@ position = Vector2( 1014.84, -171.222 )
 position = Vector2( 1080.76, -96.387 )
 
 [node name="Peg12" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1045.13, 414.989 )
+position = Vector2( 1096, 368 )
 
 [node name="Peg13" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1130.65, 325.899 )
+position = Vector2( 1248, 424 )
 
 [node name="Peg14" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1217.96, 489.824 )
+position = Vector2( 1152, 528 )
 
 [node name="Peg15" parent="." instance=ExtResource( 5 )]
 position = Vector2( 578.296, 151.283 )
@@ -157,3 +159,8 @@ position = Vector2( 1200.14, -91.0416 )
 
 [node name="Peg38" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1287.45, -162.313 )
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 8 )]
+
+[node name="NextLevelDialog" parent="CanvasLayer" instance=ExtResource( 9 )]
+next_level_path = "res://levels/Level1.tscn"
