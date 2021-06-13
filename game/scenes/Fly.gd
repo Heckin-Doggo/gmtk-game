@@ -71,7 +71,6 @@ func random_movement():
 	if not trapped:
 		var rand_force = Vector2((randf()-.5)*1000, (randf()-.5)*1000)
 		additional_vector = rand_force
-		print("set random fly force to:", rand_force)
 	
 func _on_mouse_entered():
 	# $AnimatedSprite.self_modulate = Color(1,1,0)
