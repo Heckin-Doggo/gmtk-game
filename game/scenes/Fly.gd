@@ -95,9 +95,10 @@ func _on_fly_input_event(viewport, event, shape_idx):
 		$Cursor.visible = true
 
 func trap(web_pos):
-	$AnimatedSprite.animation = "trapped"
-	trapped = true
-	get_parent().add_web_flies()
-	original_pos = web_pos
-	bounds = 3
-	$Nung.play()
+	if not trapped:
+		$AnimatedSprite.animation = "trapped"
+		trapped = true
+		get_parent().add_web_flies()
+		original_pos = web_pos
+		bounds = 3
+		$Nung.play()
