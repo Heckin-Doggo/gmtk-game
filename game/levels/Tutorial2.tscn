@@ -228,6 +228,9 @@ position = Vector2( 2096, 208 )
 [node name="Peg18" parent="." instance=ExtResource( 9 )]
 position = Vector2( 2096, 264 )
 
+[node name="Peg21" parent="." instance=ExtResource( 9 )]
+position = Vector2( 2280, 232 )
+
 [node name="Peg19" parent="." instance=ExtResource( 9 )]
 position = Vector2( 1944, 296 )
 

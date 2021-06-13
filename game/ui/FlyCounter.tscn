@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/sprites/Fly1.png" type="Texture" id=1]
+[ext_resource path="res://ui/MenuTitleFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://ui/FlyCounter.gd" type="Script" id=3]
+
+[node name="FlyCounter" type="Control"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 48.0
+margin_bottom = 48.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 40.0
+margin_right = 88.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 2 )
+text = "x 99"
+valign = 1

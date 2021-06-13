@@ -4,12 +4,16 @@ class_name Level
 # preloaded
 var Web = preload("res://scenes/Webshot.tscn")
 var RestartDialog = preload("res://ui/RestartDialog.tscn")
-onready var globals = get_node("/root/Globals")
+onready var Globals = get_node("/root/Globals")
 onready var player = get_node("Player")
 onready var NextDialog = get_node("CanvasLayer/NextLevelDialog")
 
 # global win sound
 onready var WinSound = get_node("/root/WinSound")
+
+# frame count
+var frames = 0
+var time = 0
 
 # script variables
 var flies = 0
@@ -19,8 +23,18 @@ var webbed_flies = 0
 func _ready():
 	if has_node("Player"):
 		get_node("Player").connect("died", self, "show_restart_dialog")
+	Globals.flies_left = 0 # reset counter
 
-
+func _process(delta):  # dumb globals workaround
+	Globals.flies_left = flies - webbed_flies
+	# fps counter
+	time += delta
+	frames += 1
+	if time >= 1:
+		time -= 1
+		print(frames)
+		frames = 0
+	
 
 func add_flies():
 	flies += 1
