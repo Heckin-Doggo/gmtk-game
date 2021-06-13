@@ -14,6 +14,7 @@ func _ready():
 	$NinePatchRect/VBoxContainer/RestartButton.connect("pressed", self, "reload_level")
 	$NinePatchRect/VBoxContainer/LevelSelectButton.connect("pressed", self, "level_select")
 	$NinePatchRect/VBoxContainer/ControlsButton.connect("pressed", self, "show_controls")
+	$NinePatchRect/VBoxContainer/MainMenuButton.connect("pressed", self, "return_to_menu")
 	$VolumeIcon/VolButton.connect("pressed", self, "toggle_volume")
 	
 
@@ -37,7 +38,12 @@ func show_controls():
 		var new_dialog = ControlsDialog.instance()
 		get_parent().add_child(new_dialog)
 		
-		
+
+func return_to_menu():
+	get_tree().change_scene("res://ui/TitleScreen.tscn")
+	
+
+
 func update_volume_icon():
 	var current_vol = globals.volume_BGM
 	for item in $VolumeIcon.get_children():
