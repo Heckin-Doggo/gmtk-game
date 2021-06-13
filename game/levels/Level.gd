@@ -4,6 +4,7 @@ class_name Level
 # preloaded
 var Web = preload("res://scenes/Webshot.tscn")
 var RestartDialog = preload("res://ui/RestartDialog.tscn")
+onready var globals = get_node("res://autoload/Globals.gd")
 onready var player = get_node("Player")
 onready var NextDialog = get_node("CanvasLayer/NextLevelDialog")
 
@@ -16,6 +17,8 @@ var webbed_flies = 0
 
 
 func _ready():
+	globals.set_flies(0)
+	globals.set_flies_left(0)
 	if has_node("Player"):
 		get_node("Player").connect("died", self, "show_restart_dialog")
 
@@ -23,9 +26,11 @@ func _ready():
 
 func add_flies():
 	flies += 1
+	globals.add_max_flies()
 	
 func add_web_flies():
 	webbed_flies += 1
+	globals.add_flies_left()
 	test_win()
 
 func test_win():
