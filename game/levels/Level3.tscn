@@ -169,7 +169,7 @@ position = Vector2( 1287.45, -162.313 )
 [node name="CanvasLayer" parent="." instance=ExtResource( 8 )]
 
 [node name="NextLevelDialog" parent="CanvasLayer" instance=ExtResource( 9 )]
-next_level_path = "res://levels/Level1.tscn"
+next_level_path = "res://levels/Level4.tscn"
 
 [node name="Peg39" parent="." instance=ExtResource( 5 )]
 position = Vector2( 669.854, 212.319 )
