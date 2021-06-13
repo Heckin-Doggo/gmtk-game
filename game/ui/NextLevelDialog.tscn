@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://ui/DialogBox.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ui/MenuItemFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/sprites/TutorialButton.png" type="Texture" id=3]
+[ext_resource path="res://ui/NextLevelDialog.gd" type="Script" id=4]
+
+[node name="NextLevelDialog" type="Control"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReferenceRect" type="ReferenceRect" parent="."]
+visible = false
+margin_right = 640.0
+margin_bottom = 360.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" parent="." instance=ExtResource( 1 )]
+margin_left = 240.0
+margin_top = 128.0
+margin_right = 400.0
+margin_bottom = 232.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 16.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer"]
+margin_right = 159.0
+margin_bottom = 16.0
+custom_fonts/font = ExtResource( 2 )
+text = "You got all the flies!"
+align = 1
+valign = 1
+
+[node name="NextButton" type="TextureButton" parent="NinePatchRect/VBoxContainer"]
+margin_left = 31.0
+margin_top = 20.0
+margin_right = 127.0
+margin_bottom = 68.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/NextButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 2 )
+text = "Onward!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

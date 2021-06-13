@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://levels/Level.gd" type="Script" id=1]
 [ext_resource path="res://scenes/TileMap.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://scenes/Peg.tscn" type="PackedScene" id=6]
 [ext_resource path="res://ui/GUI.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/sprites/DarkBackground.png" type="Texture" id=8]
+[ext_resource path="res://ui/NextLevelDialog.tscn" type="PackedScene" id=9]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 1 )
@@ -70,3 +71,6 @@ position = Vector2( 269.399, 428.507 )
 position = Vector2( 56.0824, 569.145 )
 
 [node name="CanvasLayer" parent="." instance=ExtResource( 7 )]
+
+[node name="NextLevelDialog" parent="CanvasLayer" instance=ExtResource( 9 )]
+next_level_path = "res://levels/Level2.tscn"

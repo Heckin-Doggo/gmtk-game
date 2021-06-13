@@ -5,6 +5,7 @@ class_name Level
 var Web = preload("res://scenes/Webshot.tscn")
 var RestartDialog = preload("res://ui/RestartDialog.tscn")
 onready var player = get_node("Player")
+onready var NextDialog = get_node("CanvasLayer/NextLevelDialog")
 
 # global win sound
 onready var WinSound = get_node("/root/WinSound")
@@ -30,6 +31,7 @@ func add_web_flies():
 func test_win():
 	if flies == webbed_flies:
 		WinSound.play()
+		NextDialog.visible = true
 		print("you win!")
 
 func create_webhook(hooked_object):
