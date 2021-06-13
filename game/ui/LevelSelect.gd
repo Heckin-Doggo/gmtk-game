@@ -15,24 +15,31 @@ func _ready():
 # level selects
 func select_1():
 	get_tree().change_scene("res://levels/Level1.tscn")
+	queue_free()
 
 func select_2():
 	get_tree().change_scene("res://levels/Level2.tscn")
+	queue_free()
 	
 func select_3():
 	get_tree().change_scene("res://levels/Level3.tscn")
+	queue_free()
 	
 func select_4():
 	get_tree().change_scene("res://levels/Level4.tscn")
+	queue_free()
 	
 func select_5():
 	get_tree().change_scene("res://levels/Level5.tscn")
+	queue_free()
 
 func select_6():
 	get_tree().change_scene("res://levels/Level6.tscn")
+	queue_free()
 
 func select_tutorial():
 	get_tree().change_scene("res://levels/Tutorial.tscn")
+	queue_free()
 	
 func go_back():
 	queue_free()
